@@ -1,0 +1,27 @@
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html,
+body,
+#root {
+  min-height: 100%;
+  background-color: #f9fafb;
+}
+
+html.dark,
+html.dark body,
+html.dark #root {
+  background-color: #0b1220;
+}
+
+html {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+@layer components {
+  .input-style {
+    @apply w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500;
+  }
+}
